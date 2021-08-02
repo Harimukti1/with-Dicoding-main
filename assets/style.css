@@ -1,0 +1,485 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-left: 120px;
+  padding-right: 120px;
+}
+
+header {
+  color: transparent;
+  font-weight: 900;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  text-shadow: 1px 1px 1px (0, 0, 0.7);
+}
+
+header .container {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .container h2 {
+  color: inherit;
+  text-transform: uppercase;
+  font-size: 32px;
+  font-weight: 2000;
+  color: whitesmoke;
+}
+
+header .container h2 span {
+  font-weight: 2000;
+  color: whitesmoke;
+}
+
+header .container nav {
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(5, auto);
+  position: relative;
+  z-index: 1;
+}
+header .container nav a:hover::after {
+  content: "";
+  display: block;
+  border-bottom: 3px solid #0e64ddce;
+  width: 50%;
+  margin: auto;
+}
+
+header .container nav a {
+  color: whitesmoke;
+  font-weight: 4000;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+header.is-scrolling {
+  background-color: #12002f;
+}
+
+header.is-scrolling .container {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.hamburger {
+  position: relative;
+  display: block;
+  width: 35px;
+  cursor: pointer;
+  appearance: none;
+  background: none;
+  outline: none;
+  border: none;
+}
+
+.hamburger .bar,
+.hamburger:after,
+.hamburger:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: whitesmoke;
+  font-weight: 900;
+  margin: 6px 0px;
+  transition: 0.4s;
+}
+
+.hamburger.is-active:before {
+  transform: rotate(-45deg) translate(-8px, 6px);
+}
+
+.hamburger.is-active:after {
+  transform: rotate(45deg) translate(-9px, -8px);
+}
+
+.hamburger.is-active .bar {
+  opacity: 0;
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  min-height: 100vh;
+  display: block;
+  z-index: 98;
+  padding-top: 120px;
+  transition: 0.4s;
+}
+
+.mobile-nav.is-active {
+  left: 0;
+}
+
+.mobile-nav a {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto 16px;
+  text-align: center;
+  padding: 12px 16px;
+  background-color: #1f103f;
+  color: #fff;
+  font-weight: 1000;
+  text-decoration: none;
+}
+
+.mobile-nav a:hover {
+  background-color: #24104f;
+}
+
+/* Banner */
+
+main section.banner .container h6 {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 63px;
+  margin-top: 50px;
+  margin-left: 30px;
+  color: whitesmoke;
+  font-weight: 600;
+}
+main section.banner .container button {
+  margin-top: 30px;
+  font-size: 30px;
+  width: 210px;
+  height: 50px;
+  background-color: #0b63dc;
+  color: white;
+  font-weight: 400;
+}
+main section.banner {
+  color: #fff;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("img/jumbotron-bg.jpg");
+  position: relative;
+  background-position: top right;
+  background-size: cover;
+  text-align: center;
+}
+main section.banner::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+main section.banner .container {
+  position: relative;
+  z-index: 1;
+}
+/* Services */
+
+.heading {
+  text-align: center;
+  width: 90%;
+  margin: 50px auto;
+  font-size: 16px;
+  line-height: 36px;
+  font-weight: 500;
+  background-color: transparent;
+  color: #152c5b;
+  margin-bottom: 50px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow: wrap;
+}
+
+.card {
+  width: 20%;
+  background: #fff;
+  border: 1px solid #ccc;
+  margin-bottom: 50px;
+  transition: 0.3s;
+}
+
+.card-header {
+  text-align: center;
+  padding: 50px 10px;
+  background: linear-gradient(to right, #3252df, #152c5b);
+  color: #fff;
+}
+
+.card-body {
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 16px;
+}
+.card-body img {
+  width: 128px;
+  height: 128px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
+}
+
+/* Testimonial */
+.wrapper p {
+  font-weight: 1000;
+}
+.wrapper {
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 50px;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.wrapper .card {
+  background: #fff;
+  width: calc(33% - 10px);
+  padding: 25px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.wrapper .card i.quote {
+  font-size: 20px;
+  color: #6d25e8;
+}
+.wrapper .card .content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.card .info .name {
+  font-weight: 900;
+  font-size: 17px;
+}
+
+.card .info .work {
+  font-size: 16px;
+  font-weight: 1000;
+  color: #6d25e8;
+}
+
+.card .info .stars {
+  margin-top: 2px;
+}
+.card .info .stars i {
+  color: #6d25e8;
+}
+.card .content .photo {
+  height: 75px;
+  width: 75px;
+  padding: 3px;
+  background: #6d25e8;
+  border-radius: 50%;
+}
+.content .photo img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.card:hover .content .photo img {
+  border-color: #fff;
+}
+/* Contact */
+
+main .contact {
+  background-color: transparent;
+  text-align: center;
+}
+
+main .contact .container {
+  background-color: #0b63dc;
+  padding-top: 64px;
+  padding-bottom: 64px;
+  margin-top: 50px;
+}
+
+main .contact .container h2 {
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+main .contact .container form {
+  display: block;
+  margin: 0 auto;
+  max-width: 680px;
+}
+
+main .contact .container form .form-grid {
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 16px;
+}
+
+main .contact .container form .form-grid .form-element,
+main .contact .container form .form-grid .form-area {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  display: block;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 20px;
+  color: #313131;
+}
+
+main .contact .container form .form-grid .form-element::placeholder,
+main .contact .container form .form-grid .form-area::placeholder {
+  color: #aaa;
+}
+
+main .contact .container form .form-grid .form-area {
+  grid-column: 1/-1;
+}
+
+main .contact .container form .right-align {
+  color: #0b63dc;
+  font-weight: 500;
+  text-align: center;
+}
+footer {
+  text-align: center;
+  font-weight: 900;
+  font-size: 30px;
+  color: #3252df;
+  background-color: whitesmoke;
+}
+/* biodata diri */
+aside {
+  font-weight: 1000;
+}
+aside h2 {
+  padding-bottom: 50px;
+}
+aside .biodata table {
+  margin: 0 auto;
+}
+@media screen and (max-width: 1000px) {
+  .card {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .container {
+    width: 100%;
+  }
+
+  .heading {
+    padding: 20px;
+    font-size: 20px;
+  }
+
+  .card {
+    width: 80%;
+  }
+  aside .biodata table {
+    width: 70%;
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 767px) {
+  header .container nav {
+    display: none;
+  }
+  .container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  main .services .container .services-grid {
+    grid-template-columns: 1fr;
+  }
+  main section.banner .container button {
+    margin-top: 30px;
+    font-size: 20px;
+    width: 210px;
+    height: 50px;
+    background-color: #0b63dc;
+    color: white;
+  }
+  main section.banner .container h6 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 63px;
+    margin-top: 50px;
+    margin-left: 30px;
+    color: whitesmoke;
+    font-weight: 600;
+  }
+  main .contact .container form .form-grid {
+    grid-template-columns: 1fr;
+  }
+  aside .biodata table {
+    width: 70%;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-nav {
+    display: none;
+  }
+  .hamburger {
+    display: none;
+  }
+  aside .biodata table {
+    width: 70%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+  main .services .container .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .wrapper .card {
+    width: calc(50% - 10px);
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 702px) {
+  .wrapper .card {
+    width: 100%;
+  }
+}
